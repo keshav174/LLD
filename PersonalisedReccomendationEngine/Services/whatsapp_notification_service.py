@@ -1,3 +1,4 @@
+from Factories.whatsapp_template_factory import WhatsAppTemplateFactory
 from Repositories.user_repository import UserRepository
 from Services.notification_service_base import NotificationServiceBase
 
