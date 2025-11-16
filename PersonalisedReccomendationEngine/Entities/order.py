@@ -1,12 +1,10 @@
-class Order:
-    order_id: int
-    user_id: int
-    price : float = 0 
-    status: str
-    Products: list
-    date : str = date.today().strftime("%Y-%m-%d")
+from Entities.product import Product
+from datetime import date
 
-    def __init__(self, order_id, user_id, price, status, Products, date):
+
+class Order:
+
+    def __init__(self, order_id, user_id, price, status, Products, date =date.today().strftime("%Y-%m-%d")):
         self.order_id = order_id
         self.user_id = user_id
         self.price = price

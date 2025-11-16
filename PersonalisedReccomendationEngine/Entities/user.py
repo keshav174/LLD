@@ -1,11 +1,5 @@
 class User:
-    user_id = 0
-    phome_number = ""
-    email = ""
-    address = ""
-    first_name = ""
-    last_name = ""
-
+    
     def __init__(self, user_id, phone_number, email, address, first_name, last_name):
         self.user_id = user_id
         self.phone_number = phone_number

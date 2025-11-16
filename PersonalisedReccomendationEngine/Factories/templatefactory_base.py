@@ -1,4 +1,8 @@
-class TemplateFactoryBase:
+from abc import ABC, abstractmethod
+from Template.template_base import TemplateBase
 
-    def get_template(self, template_type: str):
+
+class TemplateFactoryBase(ABC):
+    @abstractmethod
+    def get_template(self, template_type: str) -> TemplateBase:
         pass

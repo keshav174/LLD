@@ -1,7 +1,9 @@
 from Entities.cart import cart
 
 class CartRepository:
-    carts: list[cart]  = []
+    
+    def __init__(self):
+        self.carts: list[cart]  = []
 
     def add_cart(self, cart: cart):
         self.carts.append(cart)

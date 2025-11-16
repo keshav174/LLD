@@ -6,4 +6,4 @@ class PushNotificationTemplate(TemplateBase):
         super().__init__(header="Push Notification Header", footer="Push Notification Footer")
 
     def generate_content(self, user, message: str) -> str:
-        return f"{self.header}\nHello {user.name},\n{message}\n{self.footer}"
+        return f"{self.header}\nHello {user.first_name},\n{message}\n{self.footer}"

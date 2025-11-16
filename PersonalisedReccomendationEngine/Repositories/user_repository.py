@@ -2,7 +2,9 @@ from Entities.user import User
 
 
 class UserRepository:
-    users : list[User] = []
+    
+    def __init__(self):
+        self.users: list[User] = []
 
     def add_user(self, user: User):
         self.users.append(user)

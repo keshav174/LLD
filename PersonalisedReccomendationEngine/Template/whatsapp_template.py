@@ -6,4 +6,4 @@ class WhatsAppTemplate(TemplateBase):
         super().__init__(header="WhatsApp Header", footer="WhatsApp Footer")
 
     def generate_content(self, user, message: str) -> str:
-        return f"{self.header}\nHello {user.name},\n{message}\n{self.footer}"
+        return f"{self.header}\nHello {user.first_name},\n{message}\n{self.footer}"

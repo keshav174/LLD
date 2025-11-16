@@ -6,4 +6,4 @@ class EmailTemplate(TemplateBase):
         super().__init__(header="Email Header", footer="Email Footer")
 
     def generate_content(self, user, message: str) -> str:
-        return f"{self.header}\nHello {user.name},\n{message}\n{self.footer}"
+        return f"{self.header}\nHello {user.first_name},\n{message}\n{self.footer}"

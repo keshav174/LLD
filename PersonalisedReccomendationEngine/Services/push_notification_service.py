@@ -4,9 +4,14 @@ from Services.notification_service_base import NotificationServiceBase
 
 
 class PushNotificationService(NotificationServiceBase):
-    def send_notification(self, user_id: int, message: str):
-        user = UserRepository.get_user_by_id(self, user_id)
-        push_notification_temaplate = PushNotificationTemplateFactory.get_template("recommendation")
-        push_notification_content = push_notification_temaplate.generate_content(user, message)
+
+    def __init__(self, user_repository: UserRepository):
+        self.user_repository = user_repository
+        self.template_factory = PushNotificationTemplateFactory()
+    
+    def send_notification(self, user_id: int, message: str, template_type: str = "recommendation"):
+        user = self.user_repository.get_user_by_id(user_id)
+        push_notification_template = self.template_factory.get_template(template_type)
+        push_notification_content = push_notification_template.generate_content(user, message)
         # Logic to push notification
         print(f"Sending push notification to user {user_id}: {push_notification_content}")
